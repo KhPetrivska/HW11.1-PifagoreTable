@@ -4,27 +4,25 @@ for (let i = 1; i <= 10; i++) {
   nums.push(i);
 }
 
-
 const headersColNum = [""].concat(nums);
 const headersRowNum = nums.slice();
 
 function generateTable(thCol, thRow) {
   const tableElement = document.createElement("table");
   const tableHeadElement = document.createElement("thead");
-  const tableHeadRow = document.createElement("tr");
+  const tableRowElement = document.createElement("tr");
 
-  tableHeadElement.append(tableHeadRow);
+  tableHeadElement.append(tableRowElement);
   tableElement.append(tableHeadElement);
 
   thCol.forEach((num) => {
     const numElement = document.createElement("th");
     numElement.textContent = num;
-    tableHeadRow.append(numElement);
+    tableRowElement.append(numElement);
   });
 
   const tableBody = document.createElement("tbody");
 
-  //tableBody.append(tableRow)
   tableElement.append(tableBody);
 
   for (let i = 0; i < thRow.length; i++) {
